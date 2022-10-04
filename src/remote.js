@@ -322,7 +322,7 @@ const remote = {
         isSending = false;
         win.clearTimeout(timeout);
 
-        if (xhr.status === 200) {
+        if (Math.floor(request.status/100) === 2) {
           // eslint-disable-next-line prefer-destructuring
           interval = config.interval;
           queue.confirm();

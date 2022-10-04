@@ -147,7 +147,7 @@ describe('Requests', () => {
   function receivedPlain() {
     let result = [];
     server.requests.forEach((request) => {
-      if (request.status === 200) {
+      if (Math.floor(request.status/100) === 2) {
         result = result.concat(request.requestBody.split('\n'));
       }
     });
@@ -157,7 +157,7 @@ describe('Requests', () => {
   function receivedJSON() {
     let result = [];
     server.requests.forEach((request) => {
-      if (request.status === 200) {
+      if (Math.floor(request.status/100) === 2) {
         result = result.concat(JSON.parse(request.requestBody).logs);
       }
     });
