@@ -376,7 +376,7 @@ const remote = {
             logger: loggerName || '',
             timestamp,
             stacktrace,
-          });
+          }, args);
 
           if (isJSON === undefined) {
             isJSON = typeof log !== 'string';
